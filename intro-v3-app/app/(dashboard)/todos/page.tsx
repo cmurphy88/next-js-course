@@ -1,7 +1,5 @@
-const todoString = 'Todo Page'
-
 const TodosPage = () => {
-    return <div>{todoString}</div>
+    return <div>Todo Page</div>
 }
 
 export default TodosPage
