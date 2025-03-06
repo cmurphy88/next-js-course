@@ -1,14 +1,18 @@
+import NewTodoForm from '@/components/NewTodoForm'
 import React from 'react'
 
 const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({
-    children,
+  children,
 }) => {
-    return (
-        <div>
-            <h1>Dashboard</h1>
-            <div>{children}</div>
-        </div>
-    )
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <div>
+        <NewTodoForm />
+      </div>
+      <div>{children}</div>
+    </div>
+  )
 }
 
 export default DashboardLayout
