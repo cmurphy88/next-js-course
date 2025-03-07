@@ -12,12 +12,16 @@ export const completeTodo = async (id: string) => {
   revalidatePath('/todos')
 }
 
-export const newTodo = async (formData) => {
-  const todo = await db.todo.create({
-    data: {
-      content: formData.get('content'),
-    },
-  })
+export const newTodo = async (data: FormData) => {
+  const newTodo = data.get('todo') as String
+
+  if (newTodo) {
+    const todo = await db.todo.create({
+      data: {
+        content: data.get('content'),
+      },
+    })
+  }
 
   revalidatePath('/todos')
 }
