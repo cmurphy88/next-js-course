@@ -3,8 +3,12 @@ import db from '@/utils/db'
 
 const getData = async () => {
   // await new Promise((resolve, reject) => setTimeout(() => resolve(), 1))
-  const todos = await db.todo.findMany({})
-  // console.log('Todos: ', todos)
+  const todos = await db.todo.findMany({
+    where: {},
+    orderBy: {
+      createdAt: 'desc',
+    },
+  })
   return todos
 }
 
